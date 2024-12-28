@@ -1,0 +1,60 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DNS_TÜNELLEME.HomePage"
+             BackgroundColor="#f4f4f9">
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="DNS Tünelleme Taraması" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" 
+                   TextColor="#333" />
+
+            <!-- Link girişi için Entry -->
+            <Entry x:Name="LinkEntry" 
+                   Placeholder="Taramak istediğiniz sitenin linkini girin" 
+                   HorizontalOptions="FillAndExpand"
+                   Margin="10"
+                   Keyboard="Url" />
+
+            <!-- Başlat butonu -->
+            <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Spacing="20">
+                <Button x:Name="StartButton" 
+                        Text="Başlat" 
+                        BackgroundColor="#4CAF50" 
+                        WidthRequest="200"
+                        Clicked="OnStartClicked"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout VerticalOptions="EndAndExpand" Spacing="0">
+                <Button Text="Hakkımızda" 
+                        BackgroundColor="#333" 
+                        BorderColor="#999" 
+                        BorderWidth="1"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnHakkimizdaClicked"/>
+
+                <Button Text="Sıkça Sorulan Sorular" 
+                        BackgroundColor="#333" 
+                        BorderColor="#999" 
+                        BorderWidth="0"
+                        HorizontalOptions="FillAndExpand"
+                        Clicked="OnSSSClicked"/>
+            </VerticalStackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
